@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="ÚtilHub V20 — herramientas útiles, productividad y NOVA FLOW."
+  >
+
+  <meta name="theme-color" content="#07111f">
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="ÚtilHub"
+  >
+
+  <title>ÚtilHub V20 — NOVA FLOW ULTIMATE</title>
+
+  <link
+    rel="manifest"
+    href="./manifest.webmanifest"
+  >
+
+  <!-- ICONO INTEGRADO EN CÓDIGO -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2367e8f9'/%3E%3Cstop offset='50%25' stop-color='%237c3aed'/%3E%3Cstop offset='100%25' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%23050914'/%3E%3Ccircle cx='50' cy='50' r='34' fill='none' stroke='url(%23g)' stroke-width='8'/%3E%3Cpath d='M30 58 C40 28 60 28 70 58' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%2367e8f9'/%3E%3C/svg%3E"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./style.css"
+  >
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NOVA FLOW — FONDO
+  ====================================================== -->
+
+  <canvas id="nova"></canvas>
+
+  <div id="novaGlow"></div>
+
+  <div id="novaCursor"></div>
+
+
+  <!-- =====================================================
+       APP
+  ====================================================== -->
+
+  <div id="app">
+
+    <!-- ===================================================
+         BARRA SUPERIOR
+    ==================================================== -->
+
+    <header class="topbar">
+
+      <div class="brand">
+
+        <div class="brandIcon">
+          <span>U</span>
+        </div>
+
+        <div class="brandText">
+          <strong>ÚtilHub</strong>
+          <small>V20 · NOVA FLOW</small>
+        </div>
+
+      </div>
+
+
+      <nav class="topActions">
+
+        <button
+          id="themeBtn"
+          class="iconBtn"
+          type="button"
+          title="Cambiar tema"
+        >
+          ◐
+        </button>
+
+        <button
+          id="motionBtn"
+          class="iconBtn"
+          type="button"
+          title="Activar o desactivar animaciones"
+        >
+          ✦
+        </button>
+
+        <button
+          id="focusBtn"
+          class="iconBtn"
+          type="button"
+          title="Modo concentración"
+        >
+          ⛶
+        </button>
+
+      </nav>
+
+    </header>
+
+
+    <!-- ===================================================
+         CONTENIDO PRINCIPAL
+    ==================================================== -->
+
+    <main class="main">
+
+
+      <!-- =================================================
+           HERO
+      ================================================== -->
+
+      <section class="hero">
+
+        <div class="heroContent">
+
+          <div class="versionBadge">
+            V20 · ULTIMATE
+          </div>
+
+          <h1>
+            Todo lo útil,
+            <span>en un solo lugar.</span>
+          </h1>
+
+          <p>
+            Herramientas para estudiar, organizarte, convertir,
+            calcular y resolver tareas cotidianas.
+          </p>
+
+          <div class="heroActions">
+
+            <button
+              id="exploreBtn"
+              class="primaryBtn"
+              type="button"
+            >
+              🚀 Explorar herramientas
+            </button>
+
+            <button
+              id="novaBtn"
+              class="secondaryBtn"
+              type="button"
+            >
+              ✨ NOVA FLOW
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="heroStats">
+
+          <div class="statCard">
+            <strong id="toolCount">0</strong>
+            <span>Herramientas</span>
+          </div>
+
+          <div class="statCard">
+            <strong id="favoriteCount">0</strong>
+            <span>Favoritos</span>
+          </div>
+
+          <div class="statCard">
+            <strong id="recentCount">0</strong>
+            <span>Recientes</span>
+          </div>
+
+          <div class="statCard">
+            <strong>40</strong>
+            <span>Animaciones</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           NOVA FLOW
+      ================================================== -->
+
+      <section
+        id="novaSection"
+        class="novaPanel"
+      >
+
+        <div class="sectionHeader">
+
+          <div>
+
+            <div class="sectionKicker">
+              SISTEMA VISUAL
+            </div>
+
+            <h2>NOVA FLOW <span>ULTIMATE</span></h2>
+
+            <p>
+              40 experiencias visuales diferentes.
+            </p>
+
+          </div>
+
+          <div class="novaStatusBox">
+
+            <span
+              id="novaStatus"
+              class="statusDot"
+            ></span>
+
+            <span id="novaStatusText">
+              NOVA ACTIVO
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- INFO NOVA -->
+
+        <div class="novaInfo">
+
+          <div>
+            <small>FPS</small>
+            <strong id="fps">60</strong>
+          </div>
+
+          <div>
+            <small>MODO</small>
+            <strong id="novaModeName">
+              Cosmic
+            </strong>
+          </div>
+
+          <div>
+            <small>VERSIÓN</small>
+            <strong>4.0</strong>
+          </div>
+
+        </div>
+
+
+        <!-- CONTROLES -->
+
+        <div class="novaControls">
+
+          <label class="controlGroup">
+
+            <span>
+              Intensidad
+            </span>
+
+            <input
+              id="novaIntensity"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.8"
+            >
+
+          </label>
+
+
+          <label class="controlGroup">
+
+            <span>
+              Velocidad
+            </span>
+
+            <input
+              id="novaSpeed"
+              type="range"
+              min="0"
+              max="2"
+              step="0.05"
+              value="1"
+            >
+
+          </label>
+
+
+          <label class="controlGroup">
+
+            <span>
+              Partículas
+            </span>
+
+            <input
+              id="novaParticles"
+              type="range"
+              min="20"
+              max="220"
+              step="10"
+              value="100"
+            >
+
+          </label>
+
+
+          <label class="controlGroup">
+
+            <span>
+              Rendimiento
+            </span>
+
+            <select id="performanceSelect">
+
+              <option value="high">
+                Alto
+              </option>
+
+              <option
+                value="balanced"
+                selected
+              >
+                Equilibrado
+              </option>
+
+              <option value="performance">
+                Ahorro
+              </option>
+
+            </select>
+
+          </label>
+
+        </div>
+
+
+        <!-- NOVA AUTO -->
+
+        <div class="novaAutoBar">
+
+          <div>
+
+            <strong>
+              NOVA AUTO
+            </strong>
+
+            <span>
+              Cambia automáticamente entre los 40 modos.
+            </span>
+
+          </div>
+
+          <button
+            id="novaAutoBtn"
+            class="secondaryBtn"
+            type="button"
+          >
+            ▶ Activar
+          </button>
+
+        </div>
+
+
+        <!-- 40 MODOS -->
+
+        <div
+          id="novaModes"
+          class="novaModes"
+        >
+
+          <!-- 1 - 20 -->
+
+          <button
+            class="novaMode active"
+            data-mode="cosmic"
+            type="button"
+          >
+            🌌 Cosmic
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="aurora"
+            type="button"
+          >
+            🌈 Aurora
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="pulse"
+            type="button"
+          >
+            💓 Pulse
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="matrix"
+            type="button"
+          >
+            🟢 Matrix
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="nebula"
+            type="button"
+          >
+            🌫️ Nebula
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="waves"
+            type="button"
+          >
+            🌊 Waves
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="starfield"
+            type="button"
+          >
+            ⭐ Starfield
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="vortex"
+            type="button"
+          >
+            🌀 Vortex
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="firefly"
+            type="button"
+          >
+            ✨ Firefly
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="rain"
+            type="button"
+          >
+            🌧️ Rain
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="grid"
+            type="button"
+          >
+            ▦ Grid
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="spiral"
+            type="button"
+          >
+            🌀 Spiral
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="orbit"
+            type="button"
+          >
+            🪐 Orbit
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="plasma"
+            type="button"
+          >
+            🔥 Plasma
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="dna"
+            type="button"
+          >
+            🧬 DNA
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="snow"
+            type="button"
+          >
+            ❄️ Snow
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="lightning"
+            type="button"
+          >
+            ⚡ Lightning
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="galaxy"
+            type="button"
+          >
+            🌌 Galaxy
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="comet"
+            type="button"
+          >
+            ☄️ Comet
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="quantum"
+            type="button"
+          >
+            ⚛️ Quantum
+          </button>
+
+
+          <!-- 21 - 40 -->
+
+          <button
+            class="novaMode"
+            data-mode="meteor"
+            type="button"
+          >
+            ☄️ Meteor Storm
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="blackhole"
+            type="button"
+          >
+            🕳️ Black Hole
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="solar"
+            type="button"
+          >
+            ☀️ Solar Flare
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="digitalOcean"
+            type="button"
+          >
+            🌊 Digital Ocean
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="particleRain"
+            type="button"
+          >
+            ✨ Particle Rain
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="crystal"
+            type="button"
+          >
+            💎 Crystal
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="fractal"
+            type="button"
+          >
+            🔷 Fractal
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="gravity"
+            type="button"
+          >
+            🌀 Gravity
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="electric"
+            type="button"
+          >
+            ⚡ Electric
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="cyberTunnel"
+            type="button"
+          >
+            🛸 Cyber Tunnel
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="magicDust"
+            type="button"
+          >
+            ✨ Magic Dust
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="stellarBurst"
+            type="button"
+          >
+            🌟 Stellar Burst
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="moonlight"
+            type="button"
+          >
+            🌙 Moonlight
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="dimension"
+            type="button"
+          >
+            🌀 Dimension
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="techPulse"
+            type="button"
+          >
+            💠 Tech Pulse
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="meteorGalaxy"
+            type="button"
+          >
+            🌌 Meteor Galaxy
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="rainbowFlow"
+            type="button"
+          >
+            🌈 Rainbow Flow
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="energyCore"
+            type="button"
+          >
+            🔵 Energy Core
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="timeWarp"
+            type="button"
+          >
+            ⏳ Time Warp
+          </button>
+
+          <button
+            class="novaMode"
+            data-mode="infinity"
+            type="button"
+          >
+            ♾️ Infinity
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           BÚSQUEDA
+      ================================================== -->
+
+      <section class="toolsSection">
+
+        <div class="sectionHeader">
+
+          <div>
+
+            <div class="sectionKicker">
+              CENTRO DE HERRAMIENTAS
+            </div>
+
+            <h2>
+              ¿Qué necesitas?
+            </h2>
+
+            <p>
+              Busca una herramienta o explora las categorías.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="searchBox">
+
+          <span>⌕</span>
+
+          <input
+            id="toolSearch"
+            type="search"
+            placeholder="Buscar herramientas..."
+            autocomplete="off"
+          >
+
+          <kbd>
+            Ctrl K
+          </kbd>
+
+        </div>
+
+
+        <!-- CATEGORÍAS -->
+
+        <div
+          id="categories"
+          class="categories"
+        >
+
+          <button
+            class="categoryBtn active"
+            data-category="all"
+            type="button"
+          >
+            ✨ Todas
+          </button>
+
+          <button
+            class="categoryBtn"
+            data-category="math"
+            type="button"
+          >
+            🧮 Matemática
+          </button>
+
+          <button
+            class="categoryBtn"
+            data-category="convert"
+            type="button"
+          >
+            🔄 Conversiones
+          </button>
+
+          <button
+            class="categoryBtn"
+            data-category="time"
+            type="button"
+          >
+            ⏱️ Tiempo
+          </button>
+
+          <button
+            class="categoryBtn"
+            data-category="text"
+            type="button"
+          >
+            📝 Texto
+          </button>
+
+          <button
+            class="categoryBtn"
+            data-category="organize"
+            type="button"
+          >
+            📋 Organización
+          </button>
+
+          <button
+            class="categoryBtn"
+            data-category="life"
+            type="button"
+          >
+            🏠 Vida diaria
+          </button>
+
+          <button
+            class="categoryBtn"
+            data-category="fun"
+            type="button"
+          >
+            🎲 Entretenimiento
+          </button>
+
+          <button
+            class="categoryBtn"
+            data-category="study"
+            type="button"
+          >
+            📚 Estudio
+          </button>
+
+        </div>
+
+
+        <!-- HERRAMIENTAS -->
+
+        <div
+          id="toolGrid"
+          class="toolGrid"
+        >
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           ACCESO RÁPIDO
+      ================================================== -->
+
+      <section class="quickSection">
+
+        <div class="sectionHeader">
+
+          <div>
+
+            <div class="sectionKicker">
+              ACCESO RÁPIDO
+            </div>
+
+            <h2>
+              Tus herramientas
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="quickTools"
+          class="quickTools"
+        >
+        </div>
+
+
+        <button
+          id="clearRecentBtn"
+          class="textBtn"
+          type="button"
+        >
+          Limpiar recientes
+        </button>
+
+      </section>
+
+
+      <!-- =================================================
+           DATOS
+      ================================================== -->
+
+      <section class="systemSection">
+
+        <div class="systemCard">
+
+          <div>
+
+            <div class="sectionKicker">
+              TUS DATOS
+            </div>
+
+            <h3>
+              Guardar y recuperar ÚtilHub
+            </h3>
+
+            <p>
+              Puedes exportar tus configuraciones y datos
+              para conservarlos.
+            </p>
+
+          </div>
+
+
+          <div class="systemActions">
+
+            <button
+              id="exportBtn"
+              class="secondaryBtn"
+              type="button"
+            >
+              ↓ Exportar
+            </button>
+
+            <button
+              id="importBtn"
+              class="secondaryBtn"
+              type="button"
+            >
+              ↑ Importar
+            </button>
+
+            <input
+              id="importFile"
+              type="file"
+              accept="application/json"
+              hidden
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+    <!-- ===================================================
+         FOOTER
+    ==================================================== -->
+
+    <footer>
+
+      <div class="footerBrand">
+        <strong>ÚtilHub V20</strong>
+        <span>NOVA FLOW ULTIMATE</span>
+      </div>
+
+      <div class="footerInfo">
+        Herramientas útiles · Productividad · NOVA FLOW
+      </div>
+
+      <div
+        id="connectionStatus"
+        class="connectionStatus"
+      >
+        ● Conectado
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =====================================================
+       PANEL DE HERRAMIENTA
+  ====================================================== -->
+
+  <div
+    id="toolPanel"
+    class="toolPanel"
+    aria-hidden="true"
+  >
+
+    <div
+      class="toolPanelBackdrop"
+      data-close-tool
+    ></div>
+
+
+    <aside class="toolDrawer">
+
+      <div class="toolDrawerHeader">
+
+        <div class="toolDrawerTitle">
+
+          <span
+            id="toolPanelIcon"
+            class="toolIcon"
+          >
+            🧰
+          </span>
+
+          <div>
+
+            <small id="toolPanelCategory">
+              Herramienta
+            </small>
+
+            <h2 id="toolPanelTitle">
+              Herramienta
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <button
+          id="closeTool"
+          class="closeBtn"
+          type="button"
+          aria-label="Cerrar"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        id="toolContent"
+        class="toolContent"
+      >
+      </div>
+
+    </aside>
+
+  </div>
+
+
+  <!-- =====================================================
+       MODAL GENERAL
+  ====================================================== -->
+
+  <div
+    id="modal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modalBackdrop"
+      data-close-modal
+    ></div>
+
+    <div class="modalBox">
+
+      <button
+        class="closeBtn modalClose"
+        data-close-modal
+        type="button"
+      >
+        ×
+      </button>
+
+      <div
+        id="modalContent"
+        class="modalContent"
+      >
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  >
+    Listo
+  </div>
+
+
+  <!-- =====================================================
+       SCRIPTS
+  ====================================================== -->
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
